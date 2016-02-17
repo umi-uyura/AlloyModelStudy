@@ -1,0 +1,10 @@
+Alloy
+  Collection(src="memo")/
+  NavigationWindow(module="xp.ui")
+    Window.container(title="Alloy Model Study", onOpen="doOpen")
+      View.controller
+        TextField#memoText
+        Button#addButton(title="Add", onClick="addText")
+      ListView#memoList(onItemclick="clickItem")
+        ListSection(dataCollection="memo")
+          ListItem(title="{contents}", itemId="{id}")/
