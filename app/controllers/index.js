@@ -12,7 +12,8 @@ function addText() {
   var txt = $.memoText.getValue();
 
   var m = Alloy.createModel('memo', {
-    contents: txt
+    contents: txt,
+    priority: ''
   });
 
   m.save();
@@ -49,8 +50,8 @@ function clickItem(e) {
     case 0:
       var m = memos.where({id: itemId});
       if (m.length) {
-        var contents = '*' + m[0].get('contents');
-        m[0].set({contents: contents});
+        var priority = '*' + m[0].get('priority');
+        m[0].set({priority: priority});
         m[0].save();
       }
       break;
