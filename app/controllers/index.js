@@ -53,6 +53,7 @@ function clickItem(e) {
         var priority = '*' + m[0].get('priority');
         m[0].set({priority: priority});
         m[0].save();
+        memos.sort();
       }
       break;
     case 1:

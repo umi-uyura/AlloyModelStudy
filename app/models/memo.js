@@ -1,8 +1,9 @@
 exports.definition = {
   config: {
     columns: {
-        "id": "integer primary key autoincrement",
-        "contents": "text"
+      "id": "integer primary key autoincrement",
+      "contents": "text",
+      "priority": "text"
     },
     adapter: {
       type: "sql",
@@ -30,6 +31,9 @@ exports.definition = {
         return Backbone.Collection.prototype.fetch.call(this, options);
       }
       */
+      comparator: function(data) {
+        return (0 - data.get('priority').length);
+      }
     });
 
     return Collection;
