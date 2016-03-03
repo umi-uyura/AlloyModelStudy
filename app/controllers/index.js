@@ -8,6 +8,10 @@ function doOpen() {
   memos.fetch();
 }
 
+function doClose() {
+  $.destroy();
+}
+
 function addText() {
   var txt = $.memoText.getValue();
 

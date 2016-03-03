@@ -1,7 +1,7 @@
 Alloy
   Collection(src="memo")/
   NavigationWindow(module="xp.ui")
-    Window.container(title="Alloy Model Study", onOpen="doOpen")
+    Window.container(title="Alloy Model Study", onOpen="doOpen", onClose="doClose")
       View.controller
         TextField#memoText
         Button#addButton(title="Add", onClick="addText")
